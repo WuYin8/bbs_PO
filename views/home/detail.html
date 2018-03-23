@@ -1,0 +1,374 @@
+<html>
+	<head>
+		<title>{$title}</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../../public/css/detail.css"/>
+		<script type='text/javascript' src='/public/ckeditor/ckeditor.js'></script>
+	</head>
+	<body>
+	<!-- 头部页面 -->
+	{include head.html}
+	
+	<!-- 层叠目录 --><!--需要调整-->
+	<div class="tier">
+		<img src="../../public/img/tierHouse.png"/><span>></span>
+		<a href="../../index.php">论坛</a><span>></span>
+		<a href="index.php?jxid={$urlBig}">{$titleBig}</a><span>></span>
+		<a href="list.php?classid={$classid}&page=1">{$titleSmall}</a><span>></span>
+		{$title1}
+	</div>
+	
+	<!-- 发帖回帖按钮栏 -->
+	<div class="addLine">
+		<a href="addc.php?classid={$classid}">
+			<div class="addBottun">
+				发帖<img src="../../public/img/addBottun.png"/>
+			</div>
+		</a>
+		<a href="#replyEdit">
+			<div class="addBottun">
+				回复<img src="../../public/img/addBottun.png"/>
+			</div>
+		</a>
+		<a  href="list.php?classid={$classid}&page=1">
+			<div class="backBottun">
+				<img src="../../public/img/backBottun.png"/>返回
+			</div>
+		</a>
+	</div>
+	
+	<!-- 主贴控制栏 -->
+	{if !empty($_COOKIE['username'])}
+		{if $_COOKIE['undertype'] == 1}
+			<div class = "adminDetail">
+				<a href = "detail.php?id={$id}&del={$id}">
+				{if $detail['isdel'] == 0}
+				回收主贴
+				{/if}
+				</a><span class = "gray">|</span>
+				
+				<a href = "detail.php?id={$id}&top={$id}">
+				{if $detail['istop'] == 0}
+				设为置顶
+				{else}
+				取消置顶
+				{/if}
+				</a><span class = "gray">|</span>
+				
+				<a href = "detail.php?id={$id}&hot={$id}">
+				{if $detail['ishot'] == 0}
+				设为高亮
+				{else}
+				取消高亮
+				{/if}
+				</a><span class = "gray">|</span>
+				
+				<a href = "detail.php?id={$id}&elite={$id}">
+				{if $detail['elite'] == 0}
+				设为精华
+				{else}
+				取消精华
+				{/if}
+				</a>
+			</div>
+			
+		{/if}
+	{/if}
+	
+	<!--主贴页面-->
+	{if $page == 1}
+	<table class = "detail" cellspacing = "0" rules = "0">
+		<tr height = "70px">
+			<td width = "140px" style = "border-bottom:1px dashed #CDCDCD; border-right:1px solid #CDCDCD;  background-color:#E5EDF2; text-align:center;">
+				查看：<span class = "orange">{$detail['hits']}</span>
+				<span class = "gray">|</span>
+				回复：<span class = "orange">{$replyCount + $reReplyCount}</span>
+				<br /><br />
+				{$author['username']}
+			</td>
+			<td>
+				<div class = "titleLeft">
+					<span>{$detail['title']}</span>
+					<br /><br />
+					<img src = "../../public/img/detailPerson.gif"/>发表于{echo date('Y-m-d H:i:s' , $detail['addtime'])}
+				</div>
+				<div class = "titleRight">
+					楼主<br /><br />
+					<form action = "detail.php?id={$id}&page=1" method = "post">
+						电梯直达第<input type = "text" name = "floor" maxlength = "3" style="width:30px;">层
+						<button>GO</button>
+					</form>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td style = "border-right:1px solid #CDCDCD;  background-color:#E5EDF2; text-align:center;">
+				<br />
+				<img src = "{$author['picture']}" width = "50px" height = "50px"/>
+				<br /><br />
+				{if $author['undertype'] == 1}
+				<span class = "orange">管理员</span>
+				{else}
+				<span class = "orange">普通用户</span>
+				{/if}<br /><br />
+				<span class = "orange">{gradeName $author['grade'],$author['undertype']}</span>
+				<br /><br />
+			</td>
+			
+			<td style = "vertical-align:top;">
+				<!-- 主贴内容，金币贴判断 -->
+				{if $rate == 0}
+					<div class = "content">
+						{$detail['content']}
+					</div>
+				{elseif empty($_COOKIE['username'])}
+						<div class = "content2">
+							<img src = "../../public/img/lockDetail.gif"/>本主题需向作者支付 <b>{$rate} 积分</b> 才能浏览
+							<span><img src = "../../public/img/payDetail.gif"/><a href = "loginII.php"><b>请登陆后购买</b></a></span>
+						</div>
+				{else}
+						<!-- {$uid = $userFile['uid']} -->
+						{if $userFile['uid'] == $author['uid'] || $_COOKIE['undertype'] == 1}
+							<div class = "content">
+								{$detail['content']}
+							</div>
+						
+						{elseif dbSelect(dbConnect('localhost' , 'root' , '123123' , 'dbOne' , 'utf8') , 'bbs_pay' , 'oid' , "uid = $uid and id = $id and ispay = 1") == false}
+							<div class = "content2">
+								<img src = "../../public/img/lockDetail.gif"/>本主题需向作者支付 <b>{$rate} 积分</b> 才能浏览
+								<span><img src = "../../public/img/payDetail.gif"/><a href = "payDetail.php?id={$id}&uid={$uid}&authorid={$author['uid']}"><b>购买主题</b></a></span>
+							</div>
+						{else}
+							<div class = "content">
+								{$detail['content']}
+							</div>
+						{/if}
+					
+				{/if}
+			</td>
+			
+		</tr>
+		<tr>
+			<td style = "border-right:1px solid #CDCDCD;  background-color:#E5EDF2"></td>
+			<td>
+				<div class = "action">
+					<img src = "../../public/img/detailReply.gif"/><a href="#replyEdit">回复</a>
+				</div>
+				<!-- 主贴控制栏 -->
+				{if !empty($_COOKIE['username'])}
+					{if $_COOKIE['undertype'] == 1}
+						<div class = "adminDetail2">
+							<a href = "detail.php?id={$id}&del={$id}">
+							{if $detail['isdel'] == 0}
+							回收主贴
+							{/if}
+							</a><span class = "gray">|</span>
+							
+							<a href = "detail.php?id={$id}&top={$id}">
+							{if $detail['istop'] == 0}
+							设为置顶
+							{else}
+							取消置顶
+							{/if}
+							</a><span class = "gray">|</span>
+							
+							<a href = "detail.php?id={$id}&hot={$id}">
+							{if $detail['ishot'] == 0}
+							设为高亮
+							{else}
+							取消高亮
+							{/if}
+							</a><span class = "gray">|</span>
+							
+							<a href = "detail.php?id={$id}&elite={$id}">
+							{if $detail['elite'] == 0}
+							设为精华
+							{else}
+							取消精华
+							{/if}
+							</a>
+						</div>					
+					{/if}	
+					
+				{/if}
+			</td>
+		</tr>
+	</table>
+	{/if}
+	
+	<!-- 回帖页面 -->
+	{if $reply !== false}
+		{foreach $reply as $value}
+		{if !empty($value['uid'])}
+		<table class = "reply" cellspacing = "0" rules = "0">
+			<tr height = "40px">
+				<td width = "140px" style = "border-bottom:1px dashed #CDCDCD; border-right:1px solid #CDCDCD;  background-color:#E5EDF2; text-align:center;">
+				{$value['username']}
+				</td>
+				<td>
+					<div class = "titleLeft">
+						<img src = "../../public/img/detailPerson.gif"/>发表于{echo date('Y-m-d H:i:s' , $value['addtime'])}
+					</div>
+					<div class = "titleRight2">
+						{echo floorJump ($value['tid'],$value['id'])}
+						{floorName $value['tid'],$value['id']}
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style = "border-right:1px solid #CDCDCD;  background-color:#E5EDF2; text-align:center;">
+					<br />
+					
+					<img src = "{$value['picture']}" width = "50px" height = "50px"/>
+					<br /><br />
+					{if $value['undertype'] == 1}
+					<span class = "orange">管理员</span>
+					{else}
+					<span class = "orange">普通用户</span>
+					{/if}<br /><br />
+					<span class = "orange">{gradeName $value['grade'],$value['undertype']}</span>
+					<br /><br />
+				</td>
+				<td style = "vertical-align:top;">
+					{if $value['isdisplay'] == 0}
+					<div class = "content">
+						{$value['content']}
+					</div>
+					{elseif $value['isdisplay'] == 1}
+					<div class = "content2">
+						<img src = "../../public/img/detailDisplay.gif"/><b>此回帖已被管理员屏蔽</b> 
+					</div>
+					{/if}
+				</td>
+			</tr>
+			<tr>
+				<td style = "border-right:1px solid #CDCDCD;  background-color:#E5EDF2"></td>
+				<td>
+					<div class = "action">
+						<img src = "../../public/img/detailReply.gif"/><a href="detail.php?id={$id}&page=1&sid={$value['id']}#replyEdit">回复</a>
+					</div>
+					<!-- 回贴控制栏 -->
+					{if !empty($_COOKIE['username'])}
+						{if $_COOKIE['undertype'] == 1}
+							<div class = "adminDetail2">
+								<a href = "detail.php?id={$id}&del={$value['id']}">
+								{if $value['isdel'] == 0}
+								回收回帖
+								{/if}
+								</a><span class = "gray">|</span>
+								
+								<a href = "detail.php?id={$id}&top={$value['id']}">
+								{if $value['istop'] == 0}
+								设为置顶
+								{else}
+								取消置顶
+								{/if}
+								</a><span class = "gray">|</span>
+								
+								<a href = "detail.php?id={$id}&display={$value['id']}">
+								{if $value['isdisplay'] == 0}
+								屏蔽回帖
+								{else}
+								取消屏蔽
+								{/if}
+								</a>
+							</div>
+						{/if}	
+					{/if}
+				</td>
+			</tr>
+			{if $value['sid'] == -1}
+				<!-- {$sid = $value['id']} -->
+				<!-- {$reReply = dbSelect(dbConnect('localhost' , 'root' , '123123' , 'dbOne' , 'utf8'),'bbs_user u, bbs_details d','*',"u.uid=d.authorid and sid=$sid and isdel=0", null )} -->
+				{if $reReply !== false}
+				<tr>
+					<td style = "border-right:1px solid #CDCDCD;  background-color:#E5EDF2"></td>
+					<td class = "reReply">
+						<div style = "margin:0 auto;width:100%; max-height:200px;overflow:auto;">
+						{foreach $reReply as $vRe}
+						{if !empty($vRe['uid'])}
+							<hr />
+							<b>{$vRe['username']}回复于{echo date('Y-m-d H:i:s' ,$vRe['addtime'])}
+							:</b>
+							{$vRe['content']}
+						{/if}
+						{/foreach}
+						</div>
+					</td>
+				</tr>
+				{/if}
+			{/if}
+		</table>
+		{/if}
+		{/foreach}
+	{/if}
+	
+	<!-- 发帖按钮栏 -->
+	<div class="addLine">
+		<a href="addc.php?classid={$classid}">
+			<div class="addBottun">
+				发帖<img src="../../public/img/addBottun.png"/>
+			</div>
+		</a>
+		<a href="#replyEdit">
+			<div class="addBottun">
+				回复<img src="../../public/img/addBottun.png"/>
+			</div>
+		</a>
+		<a  href="list.php?classid={$classid}&page=1">
+			<div class="backBottun">
+				<img src="../../public/img/backBottun.png"/>返回
+			</div>
+		</a>
+	</div>
+	
+	<!-- 分页跳转栏 -->
+	<div class="limit">				
+		<form action="listLimit.php" method="post">
+			<select name="page">
+				{for $i = 1; $i <= $pages ;$i++}
+				<option value="{$i}">{$i}</option>
+				{/for}
+			</select>
+			<input type="hidden" name="id" value="{$id}"/>
+			<button>GO</button>
+		</form>
+		<a href="detail.php?id={$id}&page=1">首页</a>
+		{if $page > 1}
+		<a href="detail.php?id={$id}&page={$page - 1}">上一页</a>
+		{/if}
+		{if $page < $pages}
+		<a href="detail.php?id={$id}&page={$page + 1}">下一页</a>
+		{/if}
+		<a href="detail.php?id={$id}&page={$pages}">尾页</a><br />
+		共有{$replyCount}条回帖	每页显示{$pageCount}条，本页显示{$realCount}条	{$page}/{$pages}页
+	</div>
+	
+	<!-- 回帖编辑处 -->
+	<div id = "replyEdit">
+		<div class = "replyPicture">
+		{if !empty($_COOKIE['username'])}
+			<img src = "{$userFile['picture']}" width="45px" height = "45px"/><br />
+			{$userFile['username']}
+		{else}
+			<img src = "../../public/img/avatarBlank.gif" width="45px" height = "45px"/><br />
+			未登录
+		{/if}
+		</div>
+		<div class = "replyAdd">
+		{if empty($_GET['sid'])}
+		<!-- {$sid = 0} -->
+		{else}
+		<!-- {$sid = $_GET['sid']} -->
+		{/if}
+			<form action = "detail.php?id={$id}&sid={$sid}&page=1" method = "post">
+				<textarea name="content" class='ckeditor' id='textarea'></textarea><br />
+				<input type="submit" name="submit"  value="发表回复" style="background: -webkit-gradient(linear, left top, left bottom, from(#2D7BCB), to(#255DAD) );color:white;border:1px solid #235994;font-weight:bolder;font-family:'宋体';"/>
+			</form>
+		</div>	
+	</div>
+	
+	<!-- 尾部页面 -->
+	{include foot.html}
+	</body>
+<html>

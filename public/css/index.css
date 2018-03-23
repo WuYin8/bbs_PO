@@ -1,0 +1,109 @@
+/* 全局 */
+a {
+	color:black;
+	text-decoration:none;
+}
+a:link {
+	color:black;
+}
+a:hover {
+	color:black;
+	text-decoration:underline;
+}
+body {
+	margin:0;
+	font-family:'宋体';
+}
+
+/*层叠目录与论坛信息*/
+.tier {
+	width:960px;
+	height:29px;
+	margin:0 auto 0;
+	text-align:left;
+	line-height:29px;
+	font-size:12px;
+}
+.tier span {
+	color:#BDBDBD;
+	margin:0 2px 0;
+}
+.tier img {
+	height:20px;
+	position:relative;
+	top:4px;
+}
+.tier a {
+	color:black;
+	text-decoration:none;
+}
+.tier a:hover {
+	text-decoration:underline;
+}
+.classMsg {
+	width:960px;
+	height:29px;
+	font-size:12px;
+	margin:0 auto;
+	text-align:right;
+	line-height:29px;
+}
+.classMsg img {
+	position:relative;
+	top:3px;
+}
+.classMsg span {
+	color:#CECFDF;
+	font-weight:bolder;
+	margin-right:4px;
+}
+/*版块内容*/
+.forum {
+	width:960px;
+	margin:0 auto 0;
+}
+/*标题*/
+.forumLarge {
+	width:949px;
+	height:33px;
+	font-size:13px;
+	font-weight:bolder;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#F4F7F9), to(#E7EEF3));
+	padding-left:10px;
+	border-top:1px solid #C2D5E3;
+	border-bottom:1px solid #C2D5E3;
+	border-left:1px solid #CDCDCD;
+	border-right:1px solid #CDCDCD;
+	line-height:33px;
+}
+.forumLarge a:link {
+	color:#336699;
+}
+.forumLarge a:hover {
+	color:#336699;
+	text-decoration:bottom;
+}
+/*列表*/
+.forumSmall {
+	
+}
+.forumSmall table {
+	width:960px;
+	border-left:1px solid #CDCDCD;
+	border-right:1px solid #CDCDCD;
+	border-bottom:1px solid #CDCDCD;
+	font-size:12px;
+}
+.forumSmall tr {
+	height:56px;
+}
+.forumSmall td {
+	border-bottom:1px dashed #CDCDCD;
+}
+.forumSmall span{
+	color:#336699;
+}
+
+.list1 a {
+	color:black;
+}

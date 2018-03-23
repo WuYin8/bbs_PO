@@ -1,0 +1,26 @@
+a {
+	color:#2366A8;
+}
+body {
+	font-size:12px;
+}
+/* 登录界面 */
+table {
+	width:560px;
+	height:130px;
+	margin:180px auto;
+	font-size:14px;
+	font-family:'宋体';
+}
+table .left {
+	border-right:1px solid #DBDBDB;
+}
+table tr .project {
+	font-weight:bolder;
+	text-align:right;
+}
+/* 支持信息 */
+.backMsg {
+	width:300px;
+	margin:250px auto 50px;
+}

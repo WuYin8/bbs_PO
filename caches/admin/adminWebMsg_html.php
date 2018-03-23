@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../../public/css/adminWebMsg.css"/>
+	</head>
+	<body>
+		<div class="title">
+			站点信息
+		</div>
+		<hr />
+		<form action = 'adminWebMsg.php' method="post">
+			<b>站点名称：</b><br />
+			<input type="text" name = "webTitle" value = "<?=$webTitle;?>"/>
+			<span>站点名称，将显示在浏览器窗口标题等位置</span>
+			<hr />
+			<b>网站名称：</b><br />
+			<input type="text" name = "webName" value = "<?=$webName;?>"/>
+			<span>网站名称，将显示在页面底部的联系方式处</span>
+			<hr />
+			<b>网站URL：</b><br />
+			<input type="text" name = "webUrl" value = "<?=$webUrl;?>"/>
+			<span>网站 URL，将作为链接显示在页面底部</span>
+			<hr />
+			<b>网站备案信息代码：</b><br />
+			<input type="text" name = "webCode" value = "<?=$webCode;?>"/>
+			<span>页面底部可以显示 ICP备案信息，如果网站已备案，在此输入你的授权码，它将显示在页面底部，如果没有请留空</span>
+			<hr />
+			<b>关闭站点：</b><br />
+			<?php if ($isset == 0): ?>
+			<input type = "radio" name = "isset" value = "1"/>是
+			<input type = "radio" name = "isset" value = "0" checked />否
+			<?php elseif ($isset == 1): ?>
+			<input type = "radio" name = "isset" value = "1" checked />是
+			<input type = "radio" name = "isset" value = "0"/>否
+			<?php endif; ?>
+			<span>暂时将站点关闭，其他人无法访问，但不影响管理员访问</span>
+			<hr />
+			<button>提交</button>
+		</form>
+	</body>
+</html>

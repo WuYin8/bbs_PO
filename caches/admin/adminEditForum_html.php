@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../../public/css/adminEditForum.css"/>
+	</head>
+	<body>
+		<!-- 编辑版块信息 -->
+		<div class="title">
+			版块管理
+		</div>
+		<hr />
+		<form action = "adminEditForum.php?page=1" method = "post">
+			<table >
+				<tr>
+					<th></th>
+					<th>版块名称</th>
+					<th>显示顺序</th>
+					<th>谁是版主</th>
+					<th>版块描述</th>
+					<th>版块ICON</th>
+					<th>隐藏版块</th>
+					<th>编辑</th>
+				</tr>
+				<!-- 大版块循环 -->
+				<?php foreach ($cateLarge as $vLarge):?>		
+				<tr>
+					<td><input type ="checkbox" name = "cid[]" value = "<?=$vLarge['cid'];?>"/></td>
+					<td><?=$vLarge['classname'];?></b>-大版块</b></td>
+					<td><?=$vLarge['orderby'];?></td>
+					<td><?=$vLarge['compere'];?></td>
+					<td><?=$vLarge['description'];?></td>
+					<td><?=$vLarge['classpic'];?></td>
+					<td>
+						<?php if ($vLarge['ispass'] == '0'): ?>
+						已隐藏
+						<?php elseif ($vLarge['ispass'] == '1'): ?>
+						未隐藏
+						<?php endif; ?>
+					</td>
+					<td><a href="adminUpdateForum.php?cid=<?=$vLarge['cid'];?>">修改</a></td>
+				</tr>	
+				<!-- 小版块循环 -->
+				<?php foreach ($cateSmall as $vSmall):?>
+				<?php if ($vSmall['parentid'] == $vLarge['cid']): ?>
+					<tr>
+						<td><input type ="checkbox" name = "cid[]"  value = "<?=$vSmall['cid'];?>"/></td>
+						<td><?=$vSmall['classname'];?></td>
+						<td><?=$vSmall['orderby'];?></td>
+						<td><?=$vSmall['compere'];?></td>
+						<td><?=$vSmall['description'];?></td>
+						<td><?=$vSmall['classpic'];?></td>
+						<td>
+							<?php if ($vSmall['ispass'] == '0'): ?>
+							已隐藏
+							<?php elseif ($vSmall['ispass'] == '1'): ?>
+							未隐藏
+							<?php endif; ?>
+						</td>
+						<td><a href="adminUpdateForum.php?cid=<?=$vSmall['cid'];?>">修改</a></td>
+					</tr>
+				<?php endif; ?>
+				<?php endforeach;?>
+				<?php endforeach;?>
+			</table>
+			<button>多选删除</button>
+		</form>
+		
+	</body>
+</html>

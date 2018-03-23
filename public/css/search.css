@@ -1,0 +1,48 @@
+.title {
+	width:960px;
+	text-align:left;
+	color:#0099CC;
+	font-weight:bolder;
+	font-size:16px;
+	margin:10px auto;
+}
+.titleLittle {
+	width:960px;
+	margin:10px auto 10px;
+	color:#0099CC;
+	font-weight:bolder;
+	font-size:14px;
+	height:20px;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#EEF6FC), to(#F5F9FD));
+}
+.searchTable {
+	font-size:12px;
+	width:958px;
+	margin:0 auto;
+	table-layout: fixed;
+}
+hr {
+	width:958;
+	height:1px; 
+	border:none; 
+	border-top:1px dotted #DEEFFB; 
+	margin:5px auto 5px;
+}
+.searchTable tr {
+	border-top:1px dotted #DEEFFB; 
+	text-align:center;
+}
+.searchTable tr td {
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.searchTable td a {
+	color:#0099CC;
+	text-decoration:none;
+}
+.searchTable span {
+	position:relative;
+	left:100px;
+}
+

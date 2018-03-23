@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../../public/css/adminAddForum.css"/>
+	</head>
+	<body>
+		
+		<div class="title">
+			添加版块
+		</div>
+		
+		<div class="titleLittle">
+			技巧提示
+		</div>
+		<ul>
+			<li>添加时不选择大版块即为添加大版块</li>
+			<li>新添加的版块默认为隐藏状态，需经管理员审核后，在管理板块中取消隐藏</li>
+			<li><?=$addNotice;?></li>
+		</ul>
+		<hr />
+		
+		<form action = "adminAddForum.php" method = "post">
+			版块名称：
+			<input type="text" name = "classname"/>
+			<input type="hidden" name="ispass" value="0" />
+			<hr />
+			谁是版主：
+			<input type="text" name = "compere"/>
+			<hr />
+			版块介绍：
+			<input type="text" name = "description"/>
+			<hr />
+			选择大版块
+			<select name = "parentid">
+				<option value = "0" selected>--不选择--</option>
+				<?php foreach ($cateBig as $vCate):?>
+				<option value = "<?=$vCate['cid'];?>"><?=$vCate['classname'];?></option>
+				<?php endforeach;?>
+			</select>
+			<button>提交</button>
+		</form>
+	</body>
+</html>

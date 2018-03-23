@@ -1,0 +1,37 @@
+body {
+	margin:0;
+}
+.leftAll {
+	width:160px;
+	height:100%;
+	font-size:12px;
+	background-color:#F2F9FD;
+	padding-top:10px;
+}
+.leftAll ul {
+	 list-style-image:url("../img/adminLeftList.png");
+}
+.leftAll ul li {
+	 margin:10px auto 10px;
+}
+.leftAll ul li a {
+	 color:#666666;
+	 text-decoration:none;
+}
+.leftAll ul li a:hover {
+	 color:#2366A8;
+}
+.backMsg {
+	border-top:1px dashed #CDCDCD;
+	font-size:12px;
+	position:absolute;
+	left:0;
+	bottom:0;
+}
+.backMsg a {
+	color:#2366BB;
+	text-decoration:none;
+}
+.backMsg a:hover {
+	text-decoration:underline;
+}

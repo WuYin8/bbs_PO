@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>{$title}</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../../public/css/index.css"/>
+	</head>
+	<body>
+	<!-- 头部页面 -->
+	{include head.html}
+	
+	<!-- 层叠目录与论坛信息 -->
+	<div class="tier">
+		<img src="../../public/img/tierHouse.png"/><span>></span>
+		<a href="../../index.php">论坛</a>
+	</div>
+	<div class="classMsg">
+		<img src="../../public/img/classMsg.png"/>帖子：{$sumMotif}<span>|</span>会员：{$userCount}<span>|</span>欢迎新会员：{$lastOne}
+	</div>
+	<!-- 板块内容 --> 
+	{if $big !== false}
+		{foreach $big as $k=>$v}
+		<div class="forum">
+			<!-- 标题 -->
+			<div class="forumLarge">
+			<a href="/index.php?jxid={$v['cid']}">{$v['classname']}</a>
+			</div>
+			<!-- 列表 -->
+			<div class="forumSmall">
+				<table  rules="none">
+					{if $forumSmall !== false}
+						{foreach $forumSmall as $key => $value}
+						{if $value['parentid'] == $v['cid']}
+							<tr>
+								<td width="50px" align="center"><a href="/index.php?classid={$value['cid']}&page=1"><img src="{$value['classpic']}" width = "40px" height = "40px"/></a></td>
+								<td><a href="/list.php?classid={$value['cid']}&page=1"> <b>{$value['classname']}</b></a><br />
+								版主：<span>{$value['compere']}</span></td>
+								
+								<!-- 版块内发帖数与回帖数，也是要查询其他表 -->
+								<td width="50px">
+									<span>
+										<!-- {$classid = $value['cid']} -->
+										{if dbSelect(dbConnect('localhost' ,'root' ,'123123' ,'dbOne' , 'utf8') , 'bbs_details d,bbs_user u' , 'id' , "u.uid=d.authorid and classid = '$classid' and first = 0 and isdel = 0") == false}
+										0
+										{else}
+											{echo count(dbSelect(dbConnect('localhost' ,'root' ,'123123' ,'dbOne' , 'utf8') , 'bbs_details d,bbs_user u' , 'id' , "u.uid=d.authorid and classid = '$classid' and first = 0 and isdel = 0"))}
+										{/if}
+									</span>
+									/
+									{if dbSelect(dbConnect('localhost' ,'root' ,'123123' ,'dbOne' , 'utf8') , 'bbs_details d,bbs_user u' , 'id' , "u.uid=d.authorid and classid = '$classid' and first = 1 and isdel = 0 ") == false}
+									0
+									{else}
+										{echo count(dbSelect(dbConnect('localhost' ,'root' ,'123123' ,'dbOne' , 'utf8') , 'bbs_details d,bbs_user u' , 'id' , "u.uid=d.authorid and classid = '$classid' and first = 1 and isdel = 0"))}
+									{/if}
+								</td>
+								<td width="230px"><span>{$value['description']}</span></td>
+							</tr>
+						{/if}
+						{/foreach}
+					{/if}
+				</table>
+			</div>
+		</div>
+		{/foreach}
+	{/if}
+	<!-- 友情链接 -->
+	{include friendUrl.html}
+	
+	<!-- 尾部页面 -->
+	{include foot.html}
+	</body>
+<html>

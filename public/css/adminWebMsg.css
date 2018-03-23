@@ -1,0 +1,26 @@
+body {
+	margin:20px;
+}
+hr {
+	height:1px; 
+	border:none; 
+	border-top:1px dotted #DEEFFB; 
+	margin:5px auto 5px;
+}
+.title {
+	font-size:14px;
+	color:#0099CC;
+	font-weight:bolder;
+	font-family:'宋体';
+}
+form {
+	font-size:12px;
+	font-family:'宋体';
+}
+form input {
+	margin:10px 10px 10px 0;
+}
+form span{
+	margin-left:100px;
+	color:#CDCDCD;
+}

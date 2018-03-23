@@ -1,0 +1,114 @@
+body {
+	font-size:12px;
+	font-family:'宋体';
+}
+/*层叠目录*/
+.tier {
+	width:960px;
+	height:29px;
+	margin:0 auto 0;
+	text-align:left;
+	line-height:29px;
+}
+.tier span {
+	color:#BDBDBD;
+	margin:0 2px 0;
+}
+.tier img {
+	height:20px;
+	position:relative;
+	top:4px;
+}
+.tier a {
+	color:black;
+	text-decoration:none;
+}
+.tier a:hover {
+	text-decoration:underline;
+}
+/*设置*/
+.home {
+	width:958px;
+	height:317px;
+	border:1px solid #CCCCCC;
+	margin:0 auto;
+	padding-top:0;
+}
+/*目录*/
+.home .homeMenu {
+	width:136px;
+	height:317px;
+	background-color:#E8F0F7;
+	font-size:14px;
+	float:left;
+} 
+.homeMenu ul {
+	list-style-type:none;
+	padding:0;
+}
+.homeMenu ul li {
+	width:136px;
+	height:34px;
+	line-height:34px;
+}
+.homeMenu ul  a {
+	color:black;
+	text-decoration:none;
+	display:block;
+	width:136px;
+	height:34px;
+}
+.homeMenu ul .li1 {
+	border-top:1px dashed #CCCCCC;
+}
+.homeMenu ul .li2 {
+	border-top:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+	background-color:white;
+}
+.homeMenu ul .li3 , .li4 {
+	border-bottom:1px dashed #CCCCCC;
+}
+/*个人资料*/
+.home .personData {
+	width:806px;
+	height:307px;
+	float:left;
+	padding-top:15px;
+	padding-left:8px;
+	padding-right:8px;
+	font-size:12px;
+}
+.personData .smallTitle tr {
+	height:30px;
+	text-align:center;
+}
+.personData .smallTitle .trTd1 {
+	width:5px;
+	border-bottom:1px solid #CDCDCD;
+}
+.personData .smallTitle .trTd2 {
+	width:70px;
+	font-size:12px;
+	font-weight:bolder;
+	border-left:1px solid #CDCDCD;
+	border-right:1px solid #CDCDCD;
+	border-top:1px solid #CDCDCD;
+}
+.personData .smallTitle .trTd3 {
+	width:717px;
+	border-bottom:1px solid #CDCDCD;
+}
+.personData .data {
+	width:500px;
+	height:260px;
+	font-size:12px;
+	margin:5px auto;
+}
+.personData .data input[type=submit]{
+	background: -webkit-gradient(linear, left top, left bottom, from(#2D7BCB), to(#255DAD) );
+	color:white;
+	border:1px solid #235994;
+	font-weight:bolder;
+	font-family:'宋体';
+}

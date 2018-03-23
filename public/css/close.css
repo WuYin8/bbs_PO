@@ -1,0 +1,16 @@
+body {
+	
+}
+div {
+	width:600px;
+	height:400px;
+	font-size:30px;
+	font-weight:bolder;
+	margin:auto;
+	border:2px solid #CDCDCD;
+	text-align:center;
+	line-height:120px;
+}
+div a {
+	color:tomato;
+}

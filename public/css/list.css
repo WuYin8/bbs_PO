@@ -1,0 +1,157 @@
+a {
+	color:black;
+	text-decoration:none;
+}
+/*层叠目录*/
+.tier {
+	width:960px;
+	height:29px;
+	margin:0 auto 0;
+	text-align:left;
+	line-height:29px;
+	font-size:12px;
+}
+.tier span {
+	color:#BDBDBD;
+	margin:0 2px 0;
+}
+.tier img {
+	height:20px;
+	position:relative;
+	top:4px;
+}
+.tier a {
+	color:black;
+	text-decoration:none;
+}
+.tier a:hover {
+	text-decoration:underline;
+}
+/*中部大背景*/
+.middle {
+	width:960px;
+	height:620px;
+	margin:0 auto;
+}
+/*左侧导航栏*/
+.left {
+	width:130;
+	float:left;
+}
+.left table {
+	width:130;
+	font-size:12px;
+	vertical-align:middle;
+	text-align:left;
+}
+.left td {
+	padding:5px 0px 5px 10px;
+}
+.left  .allTitle {
+	font-weight:bolder;
+	padding:10px;
+	background-color:#F5F9FB;
+}
+.left .bigTitle {
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#FEFEFF), to(#EBF3F6));
+}
+.left .smallTitle {
+	border:none;
+}
+/* 小标题 */
+.titleSmall {
+	width:795px;
+	height:44px;
+	border:1px solid #CDCDCD;
+	float:right;
+	font-size:12px;
+	padding:10px;
+}
+.titleSmall .ts1 {
+	font-size:14px;
+	font-weight:bolder;
+}
+.titleSmall .ts2 {
+	font-weight:bolder;
+	color:red;
+}
+.titleSmall .ts3 {
+	color:blue;
+}
+.titleSmall .ts4 {
+	font-weight:bolder;
+	color:#CECFDF;
+}
+/* 按钮栏 */
+.addLine {
+	width:815px;
+	height:40px;
+	float:right;
+	margin:7px 0 7px;
+}
+.addBottun {
+	width:80px;
+	height:32px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#6AA8DE), to(#256BB8) );
+	border:1px solid #235994;
+	text-align:center;
+	line-height:32px;
+	border-radius:5px;
+	color:white;
+	float:left;
+	font-size:14px;
+	font-weight:bolder;
+	position:relative;
+	top:3px;
+}
+.backBottun {
+	width:69px;
+	height:28px;
+	/* border:1px solid #C2D5E3; */
+	text-align:center;
+	line-height:28px;
+	float:right;
+	font-size:12px;
+	position:relative;
+	top:5px;
+	border:1px solid #C2D5E3;
+}
+/* 帖子列表 */
+.list {
+	width:815px;
+	float:right;
+	border:1px solid #CDCDCD;
+}
+.list table {
+	width:815px;
+	font-size:12px;
+}
+.list table tr {
+	height:38px;
+}
+.list .listMenu {
+	background-color:#F2F2F2;
+	border-bottom:1px solid #CDCDCD;
+}
+.list .listMenu span {
+	color:#BDBDBD;
+	margin:0 2px 0;	
+}
+.list .money {
+	font-size:12px;
+	font-weight:bolder;
+}
+.list .ishot {
+	color:red;
+}
+/* 分页跳转栏 */
+.limit {
+	width:815px;
+	font-size:12px;
+	float:right;
+	text-align:right;
+	margin-bottom:10px;
+}
+.limit form {
+	margin:0;
+}

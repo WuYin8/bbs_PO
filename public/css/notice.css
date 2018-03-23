@@ -1,0 +1,24 @@
+.notice {
+	width:600px;
+	height:200px;
+	color:black;
+	margin:70px auto 200px;
+	border:3px solid #F2F2F2;
+	font-size:16px;
+}
+.notice table {
+	margin-left:10px;
+	margin-top:10px;
+}
+.notice table img {
+	width:35px;
+	height:35px;
+}
+.notice table div {
+	color:red;
+	font-weight:bolder;
+}
+.notice table a {
+	font-weight:bolder;
+	color:#336699;
+}

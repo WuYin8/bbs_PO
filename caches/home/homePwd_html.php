@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<title><?=$title;?></title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../../public/css/homePwd.css"/>
+	</head>
+	<body>
+		<!-- 头部页面 -->
+		<?php include 'D:/app/wamp64/www/php1714/bbsOne/caches/home/head_html.php'; ?>
+		
+		<!-- 设置-个人资料 -->
+		
+		<!-- 层叠目录 -->
+		<div class="tier">
+			<img src="../../public/img/tierHouse.png"/><span>></span>
+			<a href="../../index.php">论坛</a><span>></span>
+			<a href="../../home.php">设置</a><span>></span>
+			个人资料
+		</div>
+		<!-- 个人资料 -->
+		<div class="home">
+			<!-- 目录 -->
+			<div class="homeMenu">
+				<ul>
+					<li><h3>设置</h3></li>
+					<li class="li1"><a href="../../homeFace.php">修改头像</a></li>
+					<li class="li2"><a href="../../home.php">个人资料</a></li>
+					<li class="li3"><a href="../../homeSign.php">个人签名</a></li>
+					<li class="li4"><a href="../../homePwd.php">密码安全</a></li>
+				</ul>
+			</div>
+			<!-- 密码安全 -->
+			<div class="personPWD">
+				您必须填写旧密码才能修改下面的资料
+				<hr />
+				<table cellspacing="0" class="data">
+					<form action="homePwd.php" method="post">
+						<tr>
+							<td style="width:70px;"><span class="must">*</span>旧密码：</td>
+							<td><input type="password" name="passwordOld"/></td>
+						</tr>
+						<tr>
+							<td>新密码：</td>
+							<td><input type="password" name="password"/><br />
+							<span>如不需要更改密码，此处请留空</span></td>
+						</tr>
+						<tr>
+							<td>确认新密码：</td>
+							<td><input type="password" name="password2"/><br />
+							<span>如不需要更改密码，此处请留空</span></td>
+						</tr>
+						<tr>
+							<td>Email：</td>
+							<td><input type="text" name="email"/><br />
+							<span>取回密码时使用</span></td>
+						</tr>
+						<tr>
+							<td>安全问题：</td>
+							<td>
+								<select name="problem">
+									<option selected>保持原有的问题和答案</option>
+									<option value="0">无安全提问</option>
+									<option value="1">母亲的名字</option>
+									<option value="2">父亲的名字</option>
+									<option value="3">父亲出生的城市</option>
+									<option value="4">您一位老师的名字</option>
+									<option value="5">您最喜欢的餐馆的名字</option>
+								</select>
+								<br /><span>	如果您启用安全提问，登录时需填入相应的项目才能登录</span>
+							</td>
+						</tr>
+						<tr>
+							<td>回答：</td>
+							<td><input type="text" name="result"/>
+							<br /><span>如果您设置新的安全提问，请在此输入答案</span></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<input type="submit" name="submit"  value="保存" style="background: -webkit-gradient(linear, left top, left bottom, from(#2D7BCB), to(#255DAD) );color:white;border:1px solid #235994;font-weight:bolder;font-family:'宋体';"/>
+							</td>
+						</tr>
+					</form>
+				</table>
+			</div>
+		</div>
+		
+		<!-- 尾部页面 -->
+		<?php include 'D:/app/wamp64/www/php1714/bbsOne/caches/home/foot_html.php'; ?>
+	</body>
+</html>

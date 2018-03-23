@@ -1,0 +1,68 @@
+body {
+	font-size:12px;
+	font-family:'宋体';
+}
+.register {
+	width:958px;
+	height:375px;
+	margin: 10px auto 10px;
+	border:1px solid #CDCDCD;
+	align:right;
+}
+.registerTop {
+	width:948px;
+	height:33px;
+	margin: 10px auto 10px;
+	border-bottom:1px solid #CDCDCD;
+	background-color:#F2F2F2;
+	margin: 0px auto 40px;
+	font-size:16px;
+	color:444444;
+	font-weight:bolder;
+	line-height:33px;
+	padding-left:10px;
+}
+.register hr {
+	height:1px; 
+	width:80%;
+	border:none; 
+	border-top:1px dotted #CDCDCD; 
+	margin:10px auto 10px;
+}
+.register span {
+	color:red;
+	margin-left:200px;
+}
+.register input[type=text] {
+	width:230px;
+	height:21px;
+}
+.register input[type=password] {
+	width:230px;
+	height:21px;
+}
+.registerList4 {
+	position:relative;
+	left:6px;
+}
+.registerList5 input[type=text] {
+	width:60px;
+	height:21px;
+	margin-right:20px;
+}
+
+.registerList5 img {
+	width:200px;
+	height:40px;
+}
+
+.register input[type=submit] {
+	position:relative;
+	left:260px;
+	 background: -webkit-gradient(linear, left top, left bottom, from(#2D7BCB), to(#255DAD) );
+    border: 1px solid #235994;
+    color: white;
+	font-weight:bolder;
+	font-family:'宋体';
+	display: inline-block;
+}

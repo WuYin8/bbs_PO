@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../../public/css/adminUpdateLink.css"/>
+	</head>
+	<body>
+		
+		<!-- 修改友情链接 -->
+		<div class="title">
+			添加友情链接
+		</div>
+		<hr />
+		<form action = 'adminUpdateLink.php' method="post">
+			<table>
+				<tr>
+					<th>显示顺序</th>
+					<th>站点名称</th>
+					<th>站点URL</th>
+					<th>文字说明</th>
+					<th>LOGO地址</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="displayorder" value = "<?=$displayorder;?>"/></td>
+					<td><input type="text" name="name" value = "<?=$name;?>"/></td>
+					<td><input type="text" name="url" value = "<?=$url;?>"/></td>
+					<td><input type="text" name="description" value = "<?=$description;?>"/></td>
+					<td><input type="text" name="logo" value = "<?=$logo;?>"/></td>
+				</tr>
+			</table>
+			<button>修改</button>
+		</form>
+	</body>
+</html>

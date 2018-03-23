@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>{$title}</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../../public/css/addC.css"/>
+		<script type='text/javascript' src='/public/ckeditor/ckeditor.js'></script>
+	</head>
+	<body>
+	<!-- 头部页面 -->
+	{include head.html}
+	
+	<!-- 层叠目录 -->
+	<div class="tier">
+		<img src="../../public/img/tierHouse.png"/><span>></span>
+		<a href="../../index.php">论坛</a><span>></span>
+		<a href="index.php?jxid={$urlBig}">{$titleBig}</a><span>></span>
+		<a href="list.php?classid={$classid}&page=1">{$titleSmall}</a><span>></span>
+		发表帖子
+	</div>
+	
+	<!-- 发帖编辑 -->
+	<div class="add">
+		<form action = "addC.php?classid={$classid}" method = "post">
+			<b>主贴标题：</b><br /><br />
+			<input type="text" name = "title"/><span>标题长度最大为60个字节</span><br /><br />
+			<b>主贴内容：</b><br /><br />
+			<textarea name="content" class='ckeditor' id='textarea'></textarea><br /><br />
+			<b>售价：</b>
+			<select name = "rate">
+				<option value = "0">0</option>
+				<option value = "5">5</option>
+				<option value = "10">10</option>
+				<option value = "15">15</option>
+				<option value = "20">20</option>
+				<option value = "25">25</option>
+				<option value = "30">30</option>
+				<option value = "40">40</option>
+				<option value = "50">50</option>
+			</select><span>积分</span>
+			<br /><br />
+			<b>验证码：</b><input type="text" name="code"/>
+				<img src="../../helper/yzm.php" onclick="this.src='../../helper/yzm.php?'+Math.random()" id="img">
+						<a href="javascript:;"  id="btn">看不清，换一张</a>
+								
+							<script>
+								var oBtn= document.getElementById('btn');
+								var oImg= document.getElementById('img');
+								oBtn.onclick = function ()
+								{
+									oImg.src = '../../helper/yzm.php?'+Math.random();
+								}
+							</script>
+							
+			<br /><br />
+			<input type="submit" name="submit"  value="发表帖子" style="background: -webkit-gradient(linear, left top, left bottom, from(#2D7BCB), to(#255DAD) );color:white;border:1px solid #235994;font-weight:bolder;font-family:'宋体';"/>
+		</form>
+	</div>
+	<!-- 尾部页面 -->
+	{include foot.html}
+	</body>
+<html>

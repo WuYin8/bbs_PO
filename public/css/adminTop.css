@@ -1,0 +1,67 @@
+body {
+	margin:0;
+}
+.topAll {
+	height:90px;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#EEF6FC), to(#EFF7FC));
+	margin:0;
+}
+/* logo */
+.adminLogo {
+	width:120px;
+	height:60px;
+	float:left;
+	margin-top:10px;
+	margin-left:15px;
+	margin-right:15px;
+}
+/* 个人信息 */
+.cookieMsg {
+	font-size:12px;
+	font-family:'宋体';
+	float:right;
+	margin-top:20px;
+	margin-right:20px;
+}
+.cookieMsg a {
+	color:#666666;
+	text-decoration:none;
+}
+.cookieMsg span {
+	padding:6px;
+	border:1px solid #B5CFD9;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#F3F7F9), to(#FFFFFF));
+}
+.cookieMsg a:hover {
+	text-decoration:underline;
+}
+/* 主目录 */
+.menu
+{
+	position:relative;
+	top:60px;
+}
+.menu ul {
+	list-style-type:none;
+}
+.menu ul li {
+	float:left;
+	width:80px;
+	height:40px;
+}
+.menu ul li a {
+	text-decoration:none;
+	display:block;
+	width:70px;
+	height:20px;
+	text-align:center;
+	line-height:20px;
+	font-family:'宋体';
+	font-weight:bolder;
+	font-size:14px;
+	color:#639BB0;
+	border:1px solid #CDCDCD;
+}
+.menu ul li a:hover {
+	background-color:white;
+}

@@ -1,0 +1,148 @@
+/* 全局标签 */
+a {
+	text-decoration:none;
+}
+a:link {
+	color:black;
+}
+a:hover {
+	color:black;
+	text-decoration:underline;
+}
+/* 页面上方元素距顶部无间距 */
+body {
+	margin:0;
+	font-family:'宋体';
+}
+/* 顶栏 */
+.bgcolor {
+	width:100%;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#ECF2F5), to(#FFFFFF));
+	margin-bottom:-14px;
+}
+.topRow {
+	width:960px;
+	height:24px;
+	font-size:12px;
+	padding-left:0px;
+	margin:0 auto;
+	/* 0不用写px，以空格间隔 */
+	line-height:24px;
+}
+/*登陆栏*/
+.login {
+	width:960px;
+	height:88px;
+	padding-left:0px;
+	margin:6px auto 0;
+}
+.login3Type {
+	width:343px;
+	height:60px;
+	margin-top:10px;
+	float:right;
+}
+.login3Type table {
+	font-size:12px;
+	width:343px;
+	height:60px;
+}
+.login button {
+	width:70px;
+	font-size:12px;
+	font-weight:bolder;
+}
+.login .loginTd {
+	border-right:1px solid #E5EDF2;
+}
+input[name=username] {
+	width:160px;
+}
+input[name=password] {
+	width:160px;
+}
+.login3Type  span{
+	font-weight:bolder;
+	color:#CECFD9;
+	margin-right:3px;
+} 
+.login3Type .loginPic {
+	border:1px solid #CDCDCD;
+	background-color:white;
+	border-radius:5px;
+}
+/*导航栏*/
+.menu {
+	width:960px;
+	height:33px;
+	margin:0 auto 0;
+	padding:0;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#2E80D1), to(#235994));
+}
+.menu ul {
+	list-style-type:none;
+	font-weight:bolder;
+	font-size:14px;
+	position:relative;
+	left:-39px;
+}
+.menu ul a {
+	color:white;
+}
+.menu ul li {
+	height:20px;
+	float:left;
+	padding:0 19px;
+	border-right:1px solid #508FD0;
+	margin:6px auto;
+	line-height:20px;
+}
+/*搜索栏*/
+.search {
+	width:959px;
+	height:45px;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#FFFFFF), to(#F4F7F9));
+	margin:0 auto;
+	padding:0;
+	line-height:45px;
+	border: 1px solid #E5EDF2;
+}
+.search input[type="text"]{
+	width:407px;
+	height:32px;
+	border: 1px solid #CCCCCC;
+	font-family:'宋体';
+	font-size:14px;
+	
+}
+::-webkit-input-placeholder { 
+    color:#CCCCCC;
+}
+.search table {
+	position:relative;
+	top:5px;
+}
+.search button {
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#F3F6F8), to(#D6DDE2));
+    border: 1px solid #CCCCCC;
+    color: #336699;
+	width:66px;
+	height:32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+	font-weight:bolder;
+	position:relative;
+	left:-5px;
+}
+.search .search_td1 {
+	font-size:12px;
+}
+.search .search_td1 a:link {
+	color:#336699;
+}
+.search .search_td1 a:hover {
+	color:#336699;
+	text-decoration:bottom;
+}

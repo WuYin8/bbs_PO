@@ -1,0 +1,206 @@
+/*层叠目录*/
+.tier {
+	width:960px;
+	height:29px;
+	margin:0 auto 0;
+	text-align:left;
+	line-height:29px;
+	font-size:12px;
+}
+.tier span {
+	color:#BDBDBD;
+	margin:0 2px 0;
+}
+.tier img {
+	height:20px;
+	position:relative;
+	top:4px;
+}
+.tier a {
+	color:black;
+	text-decoration:none;
+}
+.tier a:hover {
+	text-decoration:underline;
+}
+/* 发帖回帖按钮栏 */
+.addLine {
+	width:960px;
+	height:45px;
+	margin:0 auto 0;
+}
+.addBottun {
+	width:80px;
+	height:32px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#6AA8DE), to(#256BB8) );
+	border:1px solid #235994;
+	text-align:center;
+	line-height:32px;
+	border-radius:5px;
+	color:white;
+	float:left;
+	font-size:14px;
+	font-weight:bolder;
+	position:relative;
+	top:3px;
+	margin-right:15px;
+}
+.backBottun {
+	width:69px;
+	height:28px;
+	text-align:center;
+	line-height:28px;
+	float:right;
+	font-size:12px;
+	position:relative;
+	top:5px;
+	border:1px solid #C2D5E3;
+}
+/* 主贴控制栏 */
+.adminDetail {
+	font-size:12px;
+	width:960px;
+	margin:5px auto 5px;
+	border-top:1px solid #CDCDCD;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.adminDetail a {
+	color:#336699;
+	text-decoration:none;
+}
+.adminDetail2 {
+	float:right;
+	font-size:12px;
+	margin-right:20px;
+	position:relative;
+	bottom:20px;
+}
+
+/* 主贴部分 */
+.detail {
+	width:958px;
+	margin:4px auto 0;
+	border:1px solid #CDCDCD;
+	font-size:12px;
+}
+
+.detail a {
+	color:black;
+}
+.orange {
+	color:orange;
+}
+.gray {
+	color:#CDCDCD;
+	font-weight:bolder;
+}
+.titleLeft {
+	width:620px;
+	float:left;
+	margin-left:20px;
+	margin-top:20px;
+}
+.titleLeft img {
+	position:relative;
+	top:3px;
+}
+.titleLeft span {
+	font-size:14px;
+	font-weight:bolder;
+}
+.titleRight {
+	width:150px;
+	float:right;
+	text-align:right;
+	margin-right:20px;
+	margin-top:20px;
+}
+.titleRight2 {
+	width:150px;
+	float:right;
+	text-align:right;
+	margin-right:20px;
+	margin-top:20px;
+}
+.content {
+	width:95%;
+	margin:0 auto;
+	padding-top:10px;
+	font-size:14px;
+	border-top:1px dashed #CDCDCD;
+}
+.content2 {
+	width:95%;
+	height:30px;
+	margin:0 auto;
+	padding-top:10px;
+	font-size:14px;
+	border:1px dashed tomato;
+	text-align:center;
+	vertical-align:30px;
+}
+.action {
+	width:95%;
+	margin:0 auto 5px;
+	font-size:12px;
+	border-top:1px dashed #CDCDCD;
+}
+.action img {
+	position:relative;
+	top:5px;
+}
+/* 回帖部分 */
+.reply {
+	width:958px;
+	margin:4px auto 0;
+	border:1px solid #CDCDCD;
+	font-size:12px;
+}
+.titleRight2 {
+	width:140px;
+	float:right;
+	text-align:right;
+	margin-right:20px;
+}
+.reply a {
+	color:black;
+}
+.reply tr .reReply {
+	padding:10px 20px 10px 20px;
+}
+.reply tr .reReply hr {
+	height:1px; 
+	border:none; 
+	border-top:1px dashed #CDCDCD; 
+	margin:5px auto 5px;
+}
+/* 分页控制栏 */
+.limit {
+	width:960px;
+	font-size:12px;
+	text-align:right;
+	margin:5px auto 5px;
+}
+.limit a {
+	color:black;
+}
+/* 回复编辑栏 */
+#replyEdit {
+	width:958px;
+	height:380px;
+	border:1px solid #CDCDCD;
+	margin:0 auto 0;
+}
+.replyPicture {
+	width:90px;
+	height:350px;
+	background-color:#E5EDF2;
+	float:left;
+	border-right:1px solid #CDCDCD;
+	padding-top:30px;
+	padding-left:50px;
+}
+.replyAdd {
+	float:left;
+}

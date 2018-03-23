@@ -1,0 +1,41 @@
+/* 全局标签 */
+a {
+	text-decoration:none;
+}
+a:link {
+	color:black;
+}
+a:hover {
+	color:black;
+	text-decoration:underline;
+}
+body {
+	margin:0;
+	font-family:'宋体';
+}
+/*底部信息栏*/
+.bottomb {
+	width:960px;
+	margin:10px auto;
+	font-size:13px;
+	font-family:'Calibri';
+	color:#7D6695;
+}
+.bottomb hr {
+	width:100%; 
+	height:1px; 
+	border:none; 
+	border-top:1px solid #CDCDCD; 
+}
+.bottom3 {
+	float:right;
+	position:relative;
+	top:-20px;
+}
+.bottomb  a {
+	color:black;
+	font-weight:bolder;
+}
+.bottomb  .a2 {
+	font-weight:normal;
+}

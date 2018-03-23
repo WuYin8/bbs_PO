@@ -1,0 +1,78 @@
+body {
+	font-size:12px;
+	font-family:'宋体';
+}
+.loginII {
+	width:626px;
+	height:382px;
+	margin: 10px auto 10px;
+	border:3px solid #F2F2F2;
+}
+.title {
+	width:200px;
+	margin-left:30px;
+	font-size:16px;
+	font-weight:bolder;
+	color:#336699;
+}
+/* 小标题 */
+.loginIITop {
+	width:580px;
+	height:52px;
+	margin: 10px auto 10px;
+	padding-left:10px;
+	border-bottom:1px solid #CDCDCD;
+	font-size:16px;
+}
+.loginIITop img{
+	position:relative;
+	top:10px;
+}
+/* 表单数据 */
+.loginII a {
+	color:#336699;
+}
+.loginII hr {
+	height:1px; 
+	width:80%;
+	border:none; 
+	border-top:1px dotted #CDCDCD; 
+	margin:10px auto 10px;
+}
+.loginII input[type=text] {
+	width:230px;
+	height:21px;
+}
+.loginII input[type=password] {
+	width:230px;
+	height:21px;
+}
+.name {
+	position:relative;
+	left:120px;
+}
+.pwd {
+	position:relative;
+	left:132px;
+}
+.problem {
+	position:relative;
+	left:102px;
+}
+.result {
+	position:relative;
+	left:132px;
+}
+.autoLogin {
+	position:relative;
+	left:164px;
+}
+.loginII button {
+	background: -webkit-gradient(linear, left top, left bottom, from(#2D7BCB), to(#255DAD) );
+    border: 1px solid #235994;
+    color: white;
+	font-weight:bolder;
+	display: inline-block;
+	position:relative;
+	left:168px;
+}

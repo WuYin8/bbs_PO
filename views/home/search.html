@@ -1,0 +1,164 @@
+<html>
+	<head>
+		<title>{$title}</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../../public/css/search.css"/>
+	</head>
+	<body>
+		<!-- 头部页面 -->
+		{include head.html}
+	
+		<div class="title">
+			分类搜索结果
+		</div>
+		
+		<div class = "titleLittle">
+			关于帖子标题的搜索结果
+		</div>
+		<table  rules = "none" class = "searchTable">
+			<tr>
+				<th>主题帖标题</th>
+				<th>主题帖内容</th>
+				<th>作者</th>
+				<th>发表时间</th>
+			</tr>
+			{if $searchDetail == '无查询结果'}
+			<tr><td>{$searchDetail}</td></tr>
+			{else}
+				{foreach $searchDetail as $vDetail}
+				<tr>
+					<td><a href = "detail.php?id={$vDetail['id']}&page=1">{$vDetail['title']}</td>
+					<td>{$vDetail['content']}</td>
+					<td>{$vDetail['username']}</td>
+					<td>{echo date('Y-m-d H:i:s' , $vDetail['addtime'])}</td>
+				</tr>
+				{/foreach}
+			{/if}
+		</table>
+		
+		<div class = "titleLittle">
+			关于帖子内容的搜索结果
+		</div>
+		<table  rules = "none" class = "searchTable">
+			<tr>
+				<th>帖子内容</th>
+				<th>类别</th>
+				<th>作者</th>
+				<th>发表时间</th>
+			</tr>
+			{if $searchReply == '无查询结果'}
+			<tr><td>{$searchReply}</td></tr>
+			{else}
+				{foreach $searchReply as $vReply}
+				<tr>
+					<td>{$vReply['content']}</td>
+					<td>
+						{if $vReply['first'] == 1}
+						<a href = "detail.php?id={$vReply['id']}&page=1">主题帖</a>
+						{elseif $vReply['first'] == 0}
+						<a href = "detail.php?id={$vReply['tid']}&page=1">回帖</a>
+						{/if}
+					</td>
+					<td>{$vReply['username']}</td>
+					<td>{echo date('Y-m-d H:i:s' , $vReply['addtime'])}</td>
+				</tr>
+				{/foreach}
+			{/if}
+		</table>
+		
+		<div class = "titleLittle">
+			关于论坛版块的搜索结果
+		</div>
+		<table  rules = "none" class = "searchTable">
+			<tr>
+				<th>版块标题</th>
+				<th>版主</th>
+				<th>类型与地址</th>
+				<th>审核状态</th>
+			</tr>
+			{if $searchCategory == '无查询结果'}
+			<tr><td>{$searchCategory}</td></tr>
+			{else}
+				{foreach $searchCategory as $vCategory}
+				<tr>
+					<td>{$vCategory['classname']}</td>
+					<td>{$vCategory['compere']}</td>
+					<td>
+						{if $vCategory['parentid'] == 0}
+						<a href = "index.php?jxid={$vCategory['cid']}">大版块</a>
+						{elseif $vCategory['parentid'] == 1}
+						<a href = "list.php?classid={$vCategory['cid']}&page=1">小版块</a>
+						{/if}
+					</td>
+					<td>
+					{if $vCategory['ispass'] == 1}
+					已审核
+					{elseif $vCategory['ispass'] == 0}
+					未审核
+					{/if}
+					</td>
+				</tr>
+				{/foreach}
+			{/if}
+		</table>
+		
+		<div class = "titleLittle">
+			关于用户名的搜索结果
+		</div>
+		<table  rules = "none" class = "searchTable">
+			<tr>
+				<th>用户名</th>
+				<th>权限</th>
+				<th>积分</th>
+				<th>注册时间</th>
+			</tr>
+			{if $searchUser == '无查询结果'}
+			<tr><td>{$searchUser}</td></tr>
+			{else}
+				{foreach $searchUser as $vUser}
+				<tr>
+					<td>{$vUser['username']}</td>
+					<td>
+					{if $vUser['undertype'] == 1}
+					管理员
+					{elseif $vUser['undertype'] == 0}
+					普通用户
+					{/if}
+					</td>
+					<td>{$vUser['grade']}</td>
+					<td>{echo date('Y-m-d H:i:s' , $vUser['regtime'])}</td>
+				</tr>
+				{/foreach}
+			{/if}
+		</table>
+		
+		<div class = "titleLittle">
+			关于友情链接的搜索结果
+		</div>
+		<table  rules = "none" class = "searchTable">
+			<tr>
+				<th>链接名字</th>
+				<th>链接URL</th>
+				<th>链接描述</th>
+				<th>添加时间</th>
+			</tr>
+			{if $searchLink == '无查询结果'}
+			<tr><td>{$searchLink}</td></tr>
+			{else}
+				{foreach $searchLink as $vLink}
+				<tr>
+					<td><a href = "{$vLink['url']}">{$vLink['name']}</a></td>
+					<td>{$vLink['url']}</td>
+					<td>{$vLink['description']}</td>
+					<td>{echo date('Y-m-d H:i:s' , $vLink['addtime'])}</td>
+				</tr>
+				{/foreach}
+			{/if}
+		</table>
+		
+		<!-- 尾部页面 -->
+		{include foot.html}
+		
+	</body>
+</html>
+
